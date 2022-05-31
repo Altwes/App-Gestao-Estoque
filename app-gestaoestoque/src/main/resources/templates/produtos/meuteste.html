@@ -1,0 +1,15 @@
+<div th:if="${entrada.id == null}" class="row">
+	<div th:each="detalhe : ${entrada.detalhes}" class="form-group col-md-3">	
+	<br>
+		<label for="status">Produto</label>
+		
+		<select class="form-control" th:field="${entrada.detalhes[__${detalheStat.index}__].produto}" >
+			<option value="0" style="display: none;" >selecione...</option>
+			<option th:if="${produto.status} == true" th:each="produto : ${produtos}"
+					th:value="${produto.id}" th:text="${produto.descricao}"></option>
+		</select>
+		
+		<label for="status">Quantidade</label>
+		<input min="1" class="form-control"   type="number" th:field="${entrada.detalhes[__${detalheStat.index}__].quantidade}"/>
+	</div>
+</div>

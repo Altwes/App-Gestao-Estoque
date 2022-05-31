@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+	 <section class="layout-content" layout:fragment="corpo">
+		<div class="page-header">
+		        <nav class="navbar navbar-expand-md bg-light">
+		            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		                <ul class="navbar-nav mr-auto">
+		                    <li class="nav-item active">
+		                        <i class="oi oi-caret-right"></i>
+		                        <span >saida de produtos</span>
+		                    </li>
+		                </ul>
+		            </div>
+		            	
+		        </nav>
+	        </div>
+	        <div class="container" id="cadastro">
+	        	  
+	        	<form th:action="@{/saida/adicionarsaida}" th:object="${saida}" method="POST">
+	        		<input th:name="usuario" type="text" th:value="${#request.userPrincipal.principal.ids}" hidden/>	
+	        	
+	        		<div  class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="descricao">Produto</label>
+	                        <select th:field="*{detalhe.produto}" style="text-transform:uppercase;" border-bottom="10px" type="text" class="form-control" id="descricao" placeholder="Descrição" >
+	                        	<option value="null" disabled="true" selected="true">selecione o produto...</option>
+	                        	 <option th:each="produto : ${produtos}" th:value="${produto.id}"  th:text="${produto.descricao}" > </option>
+	                        </select>
+	                    </div>
+	                </div>
+	                
+	                <div class="form-row">
+	                    <div class="form-group col-md-6">
+	                        <label for="status">Observações</label><br>
+	                        <input th:field="*{observacoes}" style="text-transform:uppercase;" type="text" class="form-control" id="descricao"
+	                        	placeholder="Observações"/>
+	                    </div>
+	                </div>
+	                
+	                <div class="form-row">
+	                    <div class="form-group col-md-3">
+	                        <label for="status">Quantidade</label><br>
+	                        <input th:field="*{detalhe.quantidade}" type="number" min="1" class="form-control" id="descricao" placeholder="Selecione a quantidade" required/>
+	                    </div>
+	                </div>
+	                
+	                <input type="hidden" id="id" name="id" />
+	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+	                
+	        	</form>
+	        	
+	        </div>    
+	        
+	</section>
+		
+</body>
+</html>

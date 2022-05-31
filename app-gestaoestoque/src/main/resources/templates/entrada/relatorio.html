@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>RELATORIO DE ENTRADA DE PRODUTOS</title>
+	</head>
+	
+	<body>	
+	
+		<div>
+		<p>RELATORIO DE ENTRADA DE PRODUTOS</p>
+		
+			<label>Código da Entrada:</label>
+			<span th:text="${entrada.id}"> </span> 
+			<br>
+			
+			<label>Usuário:</label>
+			<span th:text="${entrada.usuario.nome}"> </span>
+			<br>
+			
+			<label>Data:</label>
+			<span th:text="${entrada.dataEntrada}" data-mask="0000/00/00"> </span>
+			<br>
+			
+			<label>Observações:</label>
+			<span th:text="${entrada.Observacoes}"> </span>	
+		</div>
+		
+		<br>
+		
+		<div class="table-responsive">
+			<p1>Produtos Adicionados:</p1>
+			<br><br>
+			
+			<table style="width:10px; border: solid 1px #000;">
+				<thead style="background-color:#a0a0a0">
+					<tr style="text-align: center;">
+						<th style="border: solid 1px;">Código</th>
+						<th style="border: solid 1px;">Produto</th>
+						<th style="border: solid 1px;">Quantidade</th>
+					</tr>
+				</thead>
+		
+				<tbody style="background-color:#f1f1f1">
+					<tr style="text-align: center;" th:each=" detalhe : ${entrada.detalhes}">
+						<td style="border: solid 1px;" th:text="${detalhe.id}"> </td>
+						<td style="border: solid 1px;" th:text="*{detalhe?.produto?.descricao}"> </td>
+						<td style="border: solid 1px;" th:text="*{detalhe?.quantidade}"> </td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		
+	<script>
+		print();
+	</script>
+			
+	</body>
+</html>

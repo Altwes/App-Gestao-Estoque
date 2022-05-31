@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	
+	<nav class="sidebar sidebar-open" th:fragment="nav-sidebar">
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a class="nav-link " href="/"> <i
+							class="oi oi-home"></i> <span>Home</span>
+					</a></li>
+				</ul>
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active" >Produtos</span></li>
+					<li class="nav-item">
+						<a class="nav-link" href="/produtos/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar</span></a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/entrada/lista"> <i class="oi oi-data-transfer-download"></i>
+							<span>Entrada de materiais</span>
+						</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/saida/lista"> <i class="oi oi-data-transfer-upload"></i>
+							<span>Saída de materiais</span>
+						</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/produtos/listar"> <i class="oi oi-spreadsheet"> </i>
+							<span>Listar </span>
+						</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/produtos/relatorio"> 
+							<i class="oi oi-document"> </i>
+							<span>Relatório </span>
+						</a>
+					</li>
+					
+				</ul>   
+
+				<ul class="nav nav-pills">
+					<li class="nav-item"><span class="nav-link active">Usuários</span></li>
+					<li class="nav-item"><a class="nav-link" href="/usuarios/cadastrar"> <i class="oi oi-plus"></i> <span>Cadastrar
+							</span>
+						</a></li>
+					<li class="nav-item"><a class="nav-link" href="/usuarios/listar"> <i class="oi oi-spreadsheet"></i> <span>Listar
+							</span>
+						</a></li>
+				</ul>
+				</nav>
+				
+</body>
+				
+</html>

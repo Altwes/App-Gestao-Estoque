@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>RELATORIO DOS PRODUTOS</title>
+</head>
+
+<body>
+
+	<div>
+		<p>RELATORIO DO PRODUTO SELECIONADO</p>
+		
+		<label>Produto:</label>
+		<span th:text="${produtos.descricao}"> </span>
+		<br>
+		
+		<label>Código do Produto:</label>
+		<span th:text="${produtos.id}"> </span>
+		<br>
+		
+		<label>Status Atual:</label>
+		<span th:if="${produtos.status}" th:text="Ativo"> </span>
+		<span th:unless="${produtos.status}" th:text="Inativo"> </span>
+		<br>
+
+	</div>
+
+	<br>
+
+	<div class="form-group col-md-3">
+	
+		<p1>Detalhes do Produto:</p1>
+		<br><br>
+
+		<table style="width:10px; border: solid 1px #000;">
+					
+			<tbody style="border: solid 1px;">
+				
+				<tr style="text-align: center;">
+					<th scope="row" style="border: solid 1px; background-color:#a0a0a0">Entradas:</th>
+					<td style="border: solid 1px #000;" th:text="*{id}"></td>
+				</tr>
+				
+				<tr style="text-align: center;">
+					<th scope="row" style="border: solid 1px; background-color:#a0a0a0">Saídas:</th>
+					<td style="border: solid 1px #000;"></td>
+				</tr>
+				
+				<tr style="text-align: center">
+					<th scope="row" style="border: solid 1px; background-color:#a0a0a0">Estoque:</th>
+					<td style="border: solid 1px #000;"></td>
+				</tr>
+				
+			</tbody>
+			
+		</table>
+		
+	</div>
+
+	<script>
+		print();
+	</script>
+
+</body>
+
+</html>
